@@ -49,3 +49,10 @@ a:focus-visible{text-decoration:underline;outline:1px dotted currentColor;outlin
 article{text-align:left}
 article h2{text-align:center}
 .back{display:inline-block;margin-bottom:1.2em}
+
+/* Resume page: the PDF shown at letter-page proportions; phones get the links instead */
+main.wide{max-width:52em}
+.pdf{display:block;width:100%;aspect-ratio:8.5/11.4;border:1px solid var(--rule);background:#fff;margin-bottom:1.2em}
+.nopdf{padding:2em 1em;color:var(--faded)}
+.phone{display:none;color:var(--faded)}
+@media (max-width:640px){.pdf{display:none}.phone{display:block}}
