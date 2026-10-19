@@ -1,0 +1,51 @@
+/* EB Garamond, self-hosted and cut down to the letters this site uses.
+   The -ro files hold only Romanian letters and load on pages that need them. */
+@font-face{font-family:"EB Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/eb-garamond-400-normal.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2022,U+2026,U+2032-2033,U+20AC,U+2122,U+2190-2193}
+@font-face{font-family:"EB Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/eb-garamond-400-normal-ro.woff2) format("woff2");unicode-range:U+0102-0103,U+0218-021B,U+015E-015F,U+0162-0163}
+@font-face{font-family:"EB Garamond";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/eb-garamond-400-italic.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2022,U+2026,U+2032-2033,U+20AC,U+2122,U+2190-2193}
+@font-face{font-family:"EB Garamond";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/eb-garamond-400-italic-ro.woff2) format("woff2");unicode-range:U+0102-0103,U+0218-021B,U+015E-015F,U+0162-0163}
+@font-face{font-family:"EB Garamond";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/eb-garamond-600-normal.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2022,U+2026,U+2032-2033,U+20AC,U+2122,U+2190-2193}
+@font-face{font-family:"EB Garamond";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/eb-garamond-600-normal-ro.woff2) format("woff2");unicode-range:U+0102-0103,U+0218-021B,U+015E-015F,U+0162-0163}
+
+/* Moving between pages fades instead of flashing white (Chrome, Edge, Safari 18.2+) */
+@view-transition{navigation:auto}
+
+:root{
+  --paper:#f4efe4;
+  --ink:#23201b;
+  --faded:#6b6358;
+  --link:#1a3f8a;
+  --visited:#5b2a7a;
+  --rule:#c9bfae;
+  color-scheme:light;
+}
+
+html{background:var(--paper);color:var(--ink)}
+body{
+  margin:0;
+  font:18px/1.5 "EB Garamond",Garamond,Georgia,serif;
+  text-align:center;
+  padding-block:2em 3em;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+main{max-width:38em;margin:0 auto}
+
+h1{font-size:2em;font-weight:600;line-height:1.15;margin:0 0 .25em;text-wrap:balance}
+h2{font-size:1.25em;font-weight:600;margin:1.2em 0 .4em}
+p{margin:0 0 .9em}
+ul{list-style:none;margin:0;padding:0}
+li{margin-bottom:.7em}
+i,.meta{color:var(--faded)}
+small{font-size:.8em;color:var(--faded)}
+hr{border:0;border-top:2px groove var(--rule);margin:1.2em 0}
+
+a{color:var(--link);text-decoration:none}
+a:visited{color:var(--visited)}
+a:hover{text-decoration:underline}
+a:focus-visible{text-decoration:underline;outline:1px dotted currentColor;outline-offset:2px}
+
+/* Project pages: the header stays centered, longer paragraphs read left to right */
+article{text-align:left}
+article h2{text-align:center}
+.back{display:inline-block;margin-bottom:1.2em}

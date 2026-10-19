@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pocăr · Eduard Dehelean</title>
+<meta name="description" content="pocăr, Texas Hold'em for friends with side pots, bots, and a ledger that never touches the money.">
+<meta name="theme-color" content="#f4efe4">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/eb-garamond-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="speculationrules">{"prerender":[{"where":{"selector_matches":"a[href^='../']"},"eagerness":"moderate"}]}</script>
+</head>
+<body>
+<main>
+<a class="back" href="../">Eduard Dehelean</a>
+<h1>pocăr</h1>
+<p class="meta">July 2026 · solo project</p>
+<hr>
+<article>
+<p>Private Texas Hold'em for a group of friends: live nine-seat tables over Socket.io, built-in bots and an API for your own, profiles and statistics. For real-money games the host collects buy-ins outside the app, and pocăr records who sent, who confirmed and who was paid.</p>
+<h2>The hard part</h2>
+<p>Getting the money right. Side pots are paid in layers by how much each player put in, and every action is validated on the server. A test plays 300 random hands and checks that no chip is ever created or lost. Writing it turned up a raise that could create chips and a side-pot payout bug, and both are fixed.</p>
+<h2>Built with</h2>
+<p>Next.js, React, TypeScript, Socket.io, PostgreSQL, Prisma, NextAuth.</p>
+</article>
+<hr>
+<p><a href="https://github.com/end13s/pocar">Code</a></p>
+<p><small><a href="../">Back to all projects</a></small></p>
+</main>
+</body>
+</html>

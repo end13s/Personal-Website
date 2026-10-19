@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>dox · Eduard Dehelean</title>
+<meta name="description" content="dox, an on-call agent that proves the bad commit in a sandbox and waits for a human before merging the fix.">
+<meta name="theme-color" content="#f4efe4">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/eb-garamond-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="speculationrules">{"prerender":[{"where":{"selector_matches":"a[href^='../']"},"eagerness":"moderate"}]}</script>
+</head>
+<body>
+<main>
+<a class="back" href="../">Eduard Dehelean</a>
+<h1>dox</h1>
+<p class="meta">September 2026 · Agent Harness Hackathon · project lead, team of three</p>
+<hr>
+<article>
+<p>An on-call agent for a checkout service. When errors spike, an incident monitor opens a session on its own. Two read-only subagents check the logs and the recent commits in parallel. The agent then proves the cause with a test that fails at the bad commit and passes at its parent in a Daytona sandbox, opens a revert pull request, and waits for a human to approve the merge. Once the fix is deployed, it checks that recovery is real and files the postmortem.</p>
+<h2>The hard part</h2>
+<p>Trust. Logs are treated as data, so a planted line telling the agent to delete main gets flagged and ignored. Recovery only counts once 30 or more requests over 30 seconds come back under 1% errors, so an empty traffic window cannot pass for a fix.</p>
+<h2>My part</h2>
+<p>I owned the harness setup, the agent's instructions and runbook, the approval gates and the parallel subagents. Robert Lagidze and Aldi built the demo service, the monitoring and the sandbox flow with me.</p>
+<h2>Built with</h2>
+<p>Python, TrueForge, MCP, Daytona, FastAPI, SQLite.</p>
+</article>
+<hr>
+<p><a href="https://github.com/end13s/dox">Code</a> | <a href="https://github.com/end13s/checkout-service-demo/pull/2">The agent's pull request</a> | <a href="https://github.com/end13s/checkout-service-demo/issues/3">Its postmortem</a></p>
+<p><small><a href="../">Back to all projects</a></small></p>
+</main>
+</body>
+</html>
